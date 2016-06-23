@@ -3,7 +3,7 @@ namespace Homecredit\Api;
 
 use Homecredit\Api\Client\SoapClient;
 
-class iShop extends SoapClient
+class IShop extends SoapClient
 {
     /**
      * @var array
