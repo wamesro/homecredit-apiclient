@@ -22,16 +22,19 @@ HomeCredit.cz PHP API Client it's a simple wrapper for HomeCredit API which simp
 ```
 use Homecredit\Api as HCApi;
 
-$client = new HCApi\IShop([
-  'language' => $this->postParams->getParam('language', 'string'),
-  'environment' => $this->clientEnv,
-  'secret' => $this->postParams->getParam('secret', 'string'),
-  'shopId' => $this->postParams->getParam('shopId', 'integer')
-]);
+$instanceParams = [
+    'language' => 'cz',
+    'environment' => 'dev',
+    'secret' => '',
+    'shopId' => ''
+];
 
-$client->getContract(
-  $this->postParams->getParam('contractId', 'string')
-);
+$hcContract = new HCApi\IContract($instanceParams);
+
+$ContractEntity = new HCApi\Entity\ContractEntity();
+$ContractEntity->setOCode('123456789');
+$result = $hcContract->getContract($ContractEntity);
+
 ```
 
 Client needs right shop ID number and API hash which is delivered by HomeCredit.cz after you sign in contract.
