@@ -5,6 +5,7 @@
 namespace Homecredit\Api\Client;
 
 use Homecredit\Api\Exception\ClientException;
+use Homecredit\Api\Entity\BaseEntity;
 
 class SoapClient extends BaseClient
 {
@@ -40,17 +41,18 @@ class SoapClient extends BaseClient
     /**
      * @inheritdoc
      */
-    public function call($method, $queryParams)
+    public function call($method, BaseEntity $entity)
     {
-        //Prepare hash string
-        $hash = $this->getHash($queryParams);
+        $entity->setShop($this->shopId);
+        $entity->setApiSecret($this->apiSecret);
 
+        //Prepare hash string
         if ($this->methodExists($method, $this->client->__getFunctions())) {
             try {
                 $response = $this->client->{$method}(
                     array_merge(
-                        $queryParams,
-                        ['sh' => $hash]
+                        $entity->toArray(),
+                        ['sh' => $entity->getApiHash()]
                     )
                 );
             } catch (\SoapFault $e) {

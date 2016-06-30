@@ -4,6 +4,8 @@
  */
 namespace Homecredit\Api\Client;
 
+use Homecredit\Api\Entity\BaseEntity;
+
 interface ClientInterface
 {
     /**
@@ -14,21 +16,13 @@ interface ClientInterface
     public function setClient();
 
     /**
-     * Get request HASH for calls
-     * @param array $params - Parameters to prepare hash string
-     * @return string
-     * @throws ClientException
-     */
-    public function getHash(array $params);
-
-    /**
      * Process Soap call
      * @param string $method
      * @param array $queryParams
      * @return mixed
      * @throws ClientException
      */
-    public function call($method, $queryParams);
+    public function call($method, BaseEntity $entity);
 
     /**
      * Checks if called method exists in method list array
@@ -38,5 +32,4 @@ interface ClientInterface
      * @throws ClientException
      */
     public function methodExists($method, array $methodList = []);
-
 }

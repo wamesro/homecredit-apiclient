@@ -8,19 +8,24 @@ class IShopContractTest extends PHPUnit_Framework_TestCase
 {
 
     /**
-     * @var HCApi\iShop
+     * @var HCApi\IShop
      */
-    private $ishop;
+    private $iShop;
+
+    /**
+     * @var HCApi\iContract
+     */
+    private $iContract;
 
     /**
      * @var string
      */
-    private $shop = '0123';
+    private $shop = 'your_shopid';
 
     /**
      * @var string
      */
-    private $secret = 'sometesthash';
+    private $secret = 'your_hash';
 
     /**
      * @var string
@@ -44,20 +49,28 @@ class IShopContractTest extends PHPUnit_Framework_TestCase
 
     public function __construct()
     {
-        $this->ishop = new HCApi\IShop([
+        $instanceParams = [
             'language' => $this->language,
             'environment' => $this->environment,
             'trace' => $this->trace,
             'exception' => $this->exception,
             'secret' => $this->secret,
             'shopId' => $this->shop
-        ]);
+        ];
+
+        $this->iShop = new HCApi\IShop($instanceParams);
+        $this->iContract = new HCApi\IContract($instanceParams);
     }
 
     public function testGetContract()
     {
-        $result = $this->ishop->getContract('123456789');
-        $this->assertEquals($result->hcoCode, '123456789');
+        $contractId = '123456789';
+
+        $ContractEntity = new HCApi\Entity\ContractEntity();
+        $ContractEntity->setOCode($contractId);
+        $result = $this->iContract->getContract($ContractEntity);
+
+        $this->assertEquals($result->hcoCode, $contractId);
     }
 
 }

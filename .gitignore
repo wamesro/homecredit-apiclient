@@ -1,5 +1,10 @@
 .idea/*
 vendor/*
 report/*
+
 /test/tmp/*
 /test/report/*
+/test/phpunitLocal.xml
+/test/ClientLocalTest.php
+
+/usage/local.php

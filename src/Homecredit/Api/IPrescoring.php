@@ -2,6 +2,7 @@
 namespace Homecredit\Api;
 
 use Homecredit\Api\Client\WebClient;
+use Homecredit\Api\Entity\PrescoringEntity;
 
 class IPrescoring extends WebClient
 {
@@ -28,15 +29,9 @@ class IPrescoring extends WebClient
      * @param string $returnUrl - return URL
      * @return mixed
      */
-    public function getPrescoringLink($returnUrl)
+    public function getPrescoringLink(PrescoringEntity $entity)
     {
-        $queryParams = [
-            'shop' => $this->shopId,
-            'time_request' => date('d.m.Y-H:i:s', time()),
-            'ret_url' => $returnUrl
-        ];
-
-        return parent::call('GetLink', $queryParams);
+        return parent::call('GetLink', $entity);
     }
 
 }

@@ -5,7 +5,7 @@
         "HomeCredit",
         "API Client"
     ],
-    "version": "0.1.1",
+    "version": "0.2.0",
     "autoload": {
         "psr-4": {
             "Homecredit\\": "src/Homecredit"
@@ -15,6 +15,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/creoLIFE/Phplib"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/jan-swiecki/php-simple-annotations"
         }
     ],
     "require-dev": {
@@ -23,6 +27,7 @@
     },
     "require": {
         "creoLIFE/Phplib": "1.3.*",
-        "php": ">=5.3"
+        "php": ">=5.3",
+        "jan-swiecki/simple-annotations": "0.3.1"
     }
 }

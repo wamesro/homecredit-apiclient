@@ -6,6 +6,7 @@ namespace Homecredit\Api\Client;
 
 use Phplib\Helpers\Params;
 use Homecredit\Api\Exception\ClientException;
+use Homecredit\Api\Entity\BaseEntity;
 
 abstract class BaseClient implements ClientInterface
 {
@@ -59,24 +60,6 @@ abstract class BaseClient implements ClientInterface
     /**
      * @inheritdoc
      */
-    public function getHash(array $params)
-    {
-        if (!$this->apiSecret) {
-            throw new ClientException('No HomeCredit API Secret string defined!');
-        }
-
-        $hashString = sprintf(
-            '%s%s',
-            implode('', $params),
-            $this->apiSecret
-        );
-
-        return md5($hashString);
-    }
-
-    /**
-     * @inheritdoc
-     */
     public function setClient()
     {
         $this->client = new \stdClass();
@@ -86,16 +69,16 @@ abstract class BaseClient implements ClientInterface
      * @inheritdoc
      * @throws ClientException
      */
-    public function call($method, $queryParams)
+    public function call($method, BaseEntity $entity)
     {
-        //Prepare hash string
-        $hash = $this->getHash($queryParams);
+        $entity->setShop($this->shopId);
+        $entity->setApiSecret($this->apiSecret);
 
         if ($this->methodExists($method, get_class_methods($this->client))) {
             $response = $this->client->{$method}(
                 array_merge(
-                    $queryParams,
-                    ['sh' => $hash]
+                    $entity->toArray(),
+                    ['sh' => $entity->getApiHash()]
                 )
             );
         } else {

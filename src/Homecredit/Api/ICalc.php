@@ -2,6 +2,7 @@
 namespace Homecredit\Api;
 
 use Homecredit\Api\Client\WebClient;
+use Homecredit\Api\Entity\CalcEntity;
 
 class ICalc extends WebClient
 {
@@ -29,16 +30,9 @@ class ICalc extends WebClient
      * @param array $productSet - product name
      * @return mixed
      */
-    public function getCalcLink($oPrice, array $productSet = [])
+    public function getCalcLink(CalcEntity $entity)
     {
-        $queryParams = [
-            'shop' => $this->shopId,
-            'o_price' => $oPrice,
-            'product_set' => implode(',', $productSet),
-            'time_request' => date('d.m.Y-H:i:s', time())
-        ];
-
-        return parent::call('GetLink', $queryParams);
+        return parent::call('GetLink', $entity);
     }
 
 }

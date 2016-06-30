@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7818752c46f6713aad17d565796e32fb",
-    "content-hash": "a6347d796a761e11ccdb101a32a02a2c",
+    "hash": "f36535af1d832d6a80b9e0878df6783f",
+    "content-hash": "517a0dc329883bcfbf672f153a27c053",
     "packages": [
         {
             "name": "creoLIFE/Phplib",
@@ -47,6 +47,53 @@
                 "issues": "https://github.com/creoLIFE/Phplib/issues"
             },
             "time": "2016-06-22 00:00:00"
+        },
+        {
+            "name": "jan-swiecki/simple-annotations",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jan-swiecki/php-simple-annotations.git",
+                "reference": "a10f772b24ecbc6b2a9c93c7ba9f4c6e879133a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jan-swiecki/php-simple-annotations/zipball/a10f772b24ecbc6b2a9c93c7ba9f4c6e879133a6",
+                "reference": "a10f772b24ecbc6b2a9c93c7ba9f4c6e879133a6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "DocBlockReader": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Święcki",
+                    "email": "jan.swiecki@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Simple annotation parser",
+            "homepage": "https://github.com/jan-swiecki/php-simple-annotations",
+            "keywords": [
+                "annotation",
+                "annotations",
+                "docblock",
+                "parser"
+            ],
+            "support": {
+                "source": "https://github.com/jan-swiecki/php-simple-annotations/tree/0.3.1",
+                "issues": "https://github.com/jan-swiecki/php-simple-annotations/issues"
+            },
+            "time": "2015-08-17 18:38:50"
         }
     ],
     "packages-dev": [
