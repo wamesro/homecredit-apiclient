@@ -35,7 +35,7 @@ class BaseEntity
      */
     public function __construct()
     {
-        date_default_timezone_set("UTC");
+        date_default_timezone_set("Europe/Prague");
         $this->time_request = date('d.m.Y-H:i:s', time());
     }
 
