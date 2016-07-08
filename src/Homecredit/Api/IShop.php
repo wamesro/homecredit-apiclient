@@ -6,6 +6,10 @@ use Homecredit\Api\Entity\ShopEntity;
 
 class IShop extends WebClient
 {
+    const HC_CONTRACT_ACCEPTED = 'Y';
+    const HC_CONTRACT_REJECTED = 'N';
+    const HC_CONTRACT_INPROGRESS = 'L';
+
     /**
      * @var array
      */
