@@ -6,9 +6,9 @@ use Homecredit\Api\Entity\ContractEntity;
 
 class IContract extends SoapClient
 {
-    const HC_CONTRACT_ACCEPTED = 'a';
-    const HC_CONTRACT_REJECTED = 'b';
-    const HC_CONTRACT_INPROGRESS = 'c';
+    const HC_CONTRACT_ACCEPTED = '';
+    const HC_CONTRACT_REJECTED = 'd';
+    const HC_CONTRACT_INPROGRESS = '';
 
     /**
      * @var array
