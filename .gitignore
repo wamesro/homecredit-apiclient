@@ -8,3 +8,4 @@ report/*
 /test/ClientLocalTest.php
 
 /usage/local.php
+/usage/localMock.php

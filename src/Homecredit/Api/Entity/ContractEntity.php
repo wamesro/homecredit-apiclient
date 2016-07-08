@@ -15,6 +15,11 @@ class ContractEntity extends SoapBaseEntity
     protected $oCode = '';
 
     /**
+     * @var \DateTime request date-time
+     */
+    public $time_request = '';
+
+    /**
      * @return string
      */
     public function getOCode()

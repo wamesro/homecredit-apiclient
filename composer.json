@@ -5,7 +5,7 @@
         "HomeCredit",
         "API Client"
     ],
-    "version": "0.2.2",
+    "version": "0.2.3",
     "autoload": {
         "psr-4": {
             "Homecredit\\": "src/Homecredit"

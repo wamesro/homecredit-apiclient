@@ -24,6 +24,7 @@ class SoapClient extends BaseClient
         $url = str_replace('.wsdl', '', $wsdl);
         $this->client = new \SoapClient($wsdl,
             [
+                'soap_version' => SOAP_1_1,
                 'uri' => $url,
                 'location' => $url,
                 'stream_context' => $this->env === 'dev' ? self::getSoapClientDevContext() : self::getSoapClientProductionContext(),
