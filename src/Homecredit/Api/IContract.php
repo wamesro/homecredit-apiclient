@@ -6,9 +6,17 @@ use Homecredit\Api\Entity\ContractEntity;
 
 class IContract extends SoapClient
 {
-    const HC_CONTRACT_ACCEPTED = '';
+    const HC_CONTRACT_ACTIVE = 'a';
     const HC_CONTRACT_REJECTED = 'd';
-    const HC_CONTRACT_INPROGRESS = '';
+    const HC_CONTRACT_DEBT_UNAVAILABLE = 'h';
+    const HC_CONTRACT_FINISHED = 'k';
+    const HC_CONTRACT_DEBT_TOPAY = 'l';
+    const HC_CONTRACT_INPROGRESS_PREPARE = 'r';
+    const HC_CONTRACT_ACCEPTED = 's';
+    const HC_CONTRACT_CANCELED = 't';
+    const HC_CONTRACT_CANCELED_EARLY = 'u';
+    const HC_CONTRACT_INPROGRESS_VERIFICATION = 'v';
+    const HC_CONTRACT_INPROGRESS_RETURNED = 'z';
 
     /**
      * @var array
