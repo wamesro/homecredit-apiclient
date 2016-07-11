@@ -26,8 +26,7 @@ class ICalc extends WebClient
 
     /**
      * Create a link to iCalc with predefined product price
-     * @param double $oPrice - product price
-     * @param array $productSet - product name
+     * @param CalcEntity $entity
      * @return mixed
      */
     public function getCalcLink(CalcEntity $entity)

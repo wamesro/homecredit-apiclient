@@ -26,7 +26,7 @@ class IPrescoring extends WebClient
 
     /**
      * Create a link to iPrescoring form with predefined backward url link
-     * @param string $returnUrl - return URL
+     * @param PrescoringEntity $entity
      * @return mixed
      */
     public function getPrescoringLink(PrescoringEntity $entity)

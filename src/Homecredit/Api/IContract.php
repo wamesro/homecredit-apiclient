@@ -3,6 +3,7 @@ namespace Homecredit\Api;
 
 use Homecredit\Api\Client\SoapClient;
 use Homecredit\Api\Entity\ContractEntity;
+use Homecredit\Api\Entity\ContractResponseEntity;
 
 class IContract extends SoapClient
 {
@@ -37,9 +38,23 @@ class IContract extends SoapClient
     ];
 
     /**
+     * Validate contract response hash
+     * @param ContractResponseEntity $entity
+     * @param string $hash - contract entity hash
+     * @return mixed
+     * TODO Check hash creating. Not working based on API documentation
+     */
+    public function validateContractResponseHash(ContractResponseEntity $entity, $hash)
+    {
+        $entity->setShop($this->shopId);
+        $entity->setApiSecret($this->apiSecret);
+
+        return $entity->getApiHash() === $hash ? true : false;
+    }
+
+    /**
      * Get information about client contract
-     * @param string $oCode - order number
-     * @param string $hcEvid - loan number (not required)
+     * @param ContractEntity $entity
      * @return mixed
      */
     public function getContract(ContractEntity $entity)
@@ -49,8 +64,7 @@ class IContract extends SoapClient
 
     /**
      * Cancel client contract
-     * @param string $oCode - order number
-     * @param string $hcEvid - loan number (not required)
+     * @param ContractEntity $entity
      * @return mixed
      */
     public function cancelContract(ContractEntity $entity)
@@ -60,8 +74,7 @@ class IContract extends SoapClient
 
     /**
      * Get client shipping status
-     * @param string $oCode - order number
-     * @param string $hcEvid - loan number (not required)
+     * @param ContractEntity $entity
      * @return mixed
      */
     public function getShippingStatus(ContractEntity $entity)

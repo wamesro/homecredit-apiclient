@@ -30,7 +30,7 @@ class IShop extends WebClient
 
     /**
      * Create a link to iShop endpoint
-     * @param IShopEntity $entity - entity with required params
+     * @param ShopEntity $entity
      * @return mixed
      */
     public function getShopLink(ShopEntity $entity)
