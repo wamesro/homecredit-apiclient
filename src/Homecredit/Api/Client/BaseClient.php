@@ -52,7 +52,7 @@ abstract class BaseClient implements ClientInterface
         $this->shopId = $this->params->getParam('shopId', 'string');
         $this->env = $this->params->getParam('environment', 'string');
         $this->language = $this->params->getParam('language', 'string');
-        $this->apiSecret = $this->params->getParam('secret', 'string');
+        $this->apiSecret = $this->params->getParam('secret', 'hash');
 
         $this->setClient();
     }
