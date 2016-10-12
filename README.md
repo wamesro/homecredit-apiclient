@@ -1,10 +1,6 @@
 # HomeCredit PHP API Client Beta
 #### for HomeCredit API ver. 3.17
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/creoLIFE/homecredit-apiclient/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/creoLIFE/homecredit-apiclient/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/creoLIFE/homecredit-apiclient/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/creoLIFE/homecredit-apiclient/?branch=master)
-<img src="https://travis-ci.org/creoLIFE/homecredit-apiclient.svg?branch=master"/>
-
 HomeCredit.cz PHP API Client it's a simple wrapper for HomeCredit API which simplify communication with it.
 
 ## Configuration
