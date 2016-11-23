@@ -1,7 +1,7 @@
 <?php
 namespace Homecredit\Api\Entity;
 
-class ContractShippingEntity extends BaseEntity
+class ShippingEntity extends SoapBaseEntity
 {
     /**
      * All fields with value set to empty string/0/false needs to stay because of Homecredit\Api\Facade\WebFacade->GetLink() - http_build_query

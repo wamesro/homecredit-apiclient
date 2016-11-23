@@ -4,6 +4,7 @@ namespace Homecredit\Api;
 use Homecredit\Api\Client\SoapClient;
 use Homecredit\Api\Entity\ContractEntity;
 use Homecredit\Api\Entity\ContractResponseEntity;
+use Homecredit\Api\Entity\ShippingEntity;
 
 class IContract extends SoapClient
 {
@@ -84,21 +85,14 @@ class IContract extends SoapClient
 
     /**
      * Set client shipping status
-     * @param string $oCode - order number
-     * @param string $shippingDate
-     * @param string $hcEvid - loan number (not required)
+     * @param ShippingEntity $entity
      * @return mixed
+     * TODO Verify function
      */
-    public function setShippingStatus($oCode, $shippingDate, $hcEvid = null)
+    public function setShippingStatus(ShippingEntity $entity)
     {
-        $queryParams = [
-            'shop' => $this->shopId,
-            'oCode' => $oCode,
-            'hcEvid' => $hcEvid,
-            'shippingDate' => $shippingDate
-        ];
-
-        return parent::call('SetShippingStatus', $queryParams);
+        //return parent::call('SetShippingStatus', $entity);
+        return null;
     }
 
 }
