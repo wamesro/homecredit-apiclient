@@ -87,12 +87,10 @@ class IContract extends SoapClient
      * Set client shipping status
      * @param ShippingEntity $entity
      * @return mixed
-     * TODO Verify function
      */
     public function setShippingStatus(ShippingEntity $entity)
     {
-        //return parent::call('SetShippingStatus', $entity);
-        return null;
+        return parent::call('SetShippingStatus', $entity);
     }
 
 }
