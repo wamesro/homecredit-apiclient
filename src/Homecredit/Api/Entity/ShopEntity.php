@@ -175,11 +175,11 @@ class ShopEntity extends BaseEntity
     }
 
     /**
-     * @param integer $o_price
+     * @param integer|float|string $o_price
      */
     public function setOPrice($o_price)
     {
-        $this->o_price = (int)$o_price;
+        $this->o_price = is_numeric($o_price) ? number_format($o_price, 2, ',', '') : str_replace('.', ',', $o_price);
     }
 
     /**
